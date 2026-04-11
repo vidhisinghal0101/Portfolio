@@ -1,0 +1,121 @@
+.about {
+  position: relative;
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.about-text-container .section-title {
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+.about-text {
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.resume-section {
+  margin-top: 2.5rem;
+}
+
+.subsection-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.4rem;
+  color: var(--text-primary);
+  margin-bottom: 1.2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 0.5rem;
+}
+
+.resume-item {
+  margin-bottom: 1.5rem;
+}
+
+.resume-item h4 {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.2rem;
+}
+
+.resume-meta {
+  font-size: 0.9rem;
+  color: var(--accent);
+  margin-bottom: 0.4rem;
+  font-family: 'Outfit', sans-serif;
+}
+
+.resume-desc {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.skill-tag {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.6rem 1.2rem;
+  border-radius: 30px;
+  border: 1px solid var(--glass-border);
+  font-size: 0.9rem;
+  font-family: 'Outfit', sans-serif;
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+.skill-tag:hover {
+  border-color: var(--accent);
+  background: var(--accent-glow);
+  transform: translateY(-2px);
+}
+
+.about-image-container {
+  position: sticky;
+  top: 100px;
+}
+
+.image-wrapper {
+  padding: 1rem;
+  border-radius: 20px;
+}
+
+.about-img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+}
+
+.highlight-tag {
+  border-color: var(--accent);
+  background: var(--accent-glow);
+  box-shadow: 0 0 15px var(--accent-glow);
+  font-weight: 600;
+  color: #fff;
+}
+
+@media (max-width: 900px) {
+  .about-content {
+    grid-template-columns: 1fr;
+  }
+  .about-text-container .section-title {
+    text-align: center;
+  }
+  .about-image-container {
+    position: relative;
+    top: 0;
+  }
+}
