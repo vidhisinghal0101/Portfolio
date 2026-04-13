@@ -5,10 +5,10 @@
   --bg-secondary: #111111;
   --text-primary: #ffffff;
   --text-secondary: #9ca3af;
-  --accent: #6b46c1;
-  --accent-glow: rgba(107, 70, 193, 0.25);
-  --accent-glow-secondary: rgba(219, 39, 119, 0.15);
-  --accent-gradient: linear-gradient(135deg, #6b46c1 0%, #db2777 100%);
+  --accent: #8b008b;
+  --accent-glow: rgba(139, 0, 139, 0.25);
+  --accent-glow-secondary: rgba(220, 20, 60, 0.15);
+  --accent-gradient: linear-gradient(135deg, #8b008b 0%, #dc143c 100%);
   --glass-bg: rgba(255, 255, 255, 0.03);
   --glass-border: rgba(255, 255, 255, 0.05);
   --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);

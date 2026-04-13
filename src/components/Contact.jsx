@@ -29,10 +29,10 @@ const Contact = () => {
               <span className="info-label">Email:</span>
               <a href="mailto:vidhisinghal102@gmail.com" className="info-value">vidhisinghal102@gmail.com</a>
             </div>
-            <div className="info-item">
+            {/* <div className="info-item">
               <span className="info-label">Phone:</span>
               <a href="tel:+917982219925" className="info-value">+91 7982219925</a>
-            </div>
+            </div> */}
             <div className="info-item">
               <span className="info-label">Location:</span>
               <span className="info-value">Sonipat, Haryana</span>
