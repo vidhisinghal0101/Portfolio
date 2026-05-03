@@ -14,7 +14,8 @@ const Hero = () => {
           </p>
           <div className="cta-group">
             <a href="#projects" className="btn-primary">View My Work</a>
-            <a href="#contact" className="btn-secondary">Get In Touch</a>
+            <a href="#contact" className="btn-primary">Get In Touch</a>
+            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="btn-primary">View My Resume</a>
           </div>
         </div>
       </div>

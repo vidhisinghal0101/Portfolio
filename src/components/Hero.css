@@ -36,8 +36,16 @@
 }
 
 .hero-card:hover .bio {
-  color: #e2e8f0;
+  color: var(--text-primary);
   transition: color 0.6s ease;
+}
+
+[data-theme="light"] .bio {
+  color: var(--text-primary);
+}
+
+[data-theme="light"] .hero-card:hover .bio {
+  color: var(--text-secondary);
 }
 
 .greeting {

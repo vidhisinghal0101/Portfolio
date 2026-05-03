@@ -14,12 +14,15 @@
 }
 
 .contact-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: stretch;
+  margin-top: 2rem;
 }
 
-.contact-info, .contact-form {
+.contact-info,
+.contact-form {
   padding: 3rem;
   display: flex;
   flex-direction: column;
@@ -28,12 +31,13 @@
 
 .contact-info {
   width: 100%;
-  max-width: 600px;
   align-items: center;
   text-align: center;
+  justify-content: center;
 }
 
-.contact-info h3, .contact-form h3 {
+.contact-info h3,
+.contact-form h3 {
   font-family: 'Outfit', sans-serif;
   font-size: 1.5rem;
   margin-bottom: 1rem;
@@ -84,6 +88,17 @@ a.info-value:hover {
   transform: translateY(-3px) scale(1.1);
 }
 
+.resume-btn {
+  margin-top: 0.5rem;
+  padding: 0.6rem 1.5rem;
+  font-size: 0.9rem;
+}
+
+.info-item:hover .resume-btn {
+  transform: scale(1);
+  /* Don't scale the button as much as the text */
+}
+
 .social-links {
   display: flex;
   justify-content: center;
@@ -126,12 +141,49 @@ label {
   margin-top: 1rem;
 }
 
+.decorative-card {
+  position: relative;
+  transition: all 0.4s ease;
+  border: 2px solid rgba(255, 255, 255, 0.1); /* Subtle glass edge */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2), inset 0 0 10px rgba(255, 255, 255, 0.05);
+}
+
+.decorative-card::after {
+  content: '';
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.05); /* Very faint glass inner frame */
+  border-radius: 12px;
+  pointer-events: none;
+  opacity: 0.8;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.decorative-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 255, 255, 0.3); /* Brighter white instead of pink */
+  box-shadow: 0 15px 40px var(--accent-glow);
+}
+
+.decorative-card:hover::after {
+  border-color: rgba(255, 255, 255, 0.2);
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  opacity: 1;
+}
+
 @media (max-width: 768px) {
   .contact-content {
     grid-template-columns: 1fr;
   }
-  
-  .contact-info, .contact-form {
+
+  .contact-info,
+  .contact-form {
     padding: 2rem 1.5rem;
   }
 }
