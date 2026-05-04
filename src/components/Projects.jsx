@@ -44,7 +44,7 @@ const miniProjectsData = [
   {
     id: 1,
     title: 'House Price Prediction',
-    tech: 'Python, scikit-learn, Pandas, NumPy, Streamlit, LangGraph, HuggingFace, TF-IDF',
+    tech: 'Python | scikit-learn| Panda | NumPy | Streamlit | LangGraph | HuggingFace | TF-IDF',
     description: 'Built an end-to-end ML system that predicts house prices and generates AI-driven BUY/HOLD/AVOID recommendations using market data and comparable properties.',
     links: [
       { text: 'GitHub', url: 'https://github.com/vidhisinghal0101/house-price-prediction-ml.git' },
