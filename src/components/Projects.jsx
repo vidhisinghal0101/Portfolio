@@ -122,7 +122,21 @@ const Projects = () => {
                   <h4 className="mini-project-title">{project.title}</h4>
                   <p className="mini-project-tech">{project.tech}</p>
                   <p className="mini-project-desc">{project.description}</p>
-                  <a href={project.link} className="project-link" onClick={(e) => e.preventDefault()}>View Project →</a>
+                  <div className="project-links">
+                    {project.links ? (
+                      project.links.map((link, index) => (
+                        <a key={index} href={link.url} target="_blank" rel="noopener noreferrer" className="project-link">
+                          {link.text} →
+                        </a>
+                      ))
+                    ) : (
+                      project.link && project.link !== '#' && (
+                        <a href={project.link} target="_blank" rel="noopener noreferrer" className="project-link">
+                          View Project →
+                        </a>
+                      )
+                    )}
+                  </div>
                 </div>
               ))}
             </div>
