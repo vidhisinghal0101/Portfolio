@@ -52,20 +52,20 @@ const miniProjectsData = [
 
     ]
   },
-  {
-    id: 2,
-    title: 'To-Do List',
-    tech: 'JavaScript | Local Storage',
-    description: 'A minimalist task manager to keep track of daily activities.',
-    link: '#'
-  },
-  {
-    id: 3,
-    title: 'Calculator',
-    tech: 'HTML | CSS | JS',
-    description: 'A beautifully designed calculator with basic arithmetic operations.',
-    link: '#'
-  }
+  // {
+  //   id: 2,
+  //   title: 'To-Do List',
+  //   tech: 'JavaScript | Local Storage',
+  //   description: 'A minimalist task manager to keep track of daily activities.',
+  //   link: '#'
+  // },
+  // {
+  //   id: 3,
+  //   title: 'Calculator',
+  //   tech: 'HTML | CSS | JS',
+  //   description: 'A beautifully designed calculator with basic arithmetic operations.',
+  //   link: '#'
+  // }
 ];
 
 const Projects = () => {
