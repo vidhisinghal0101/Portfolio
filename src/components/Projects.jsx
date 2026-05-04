@@ -43,10 +43,14 @@ const projectsData = [
 const miniProjectsData = [
   {
     id: 1,
-    title: 'Weather App',
-    tech: 'React | OpenWeather API',
-    description: 'A simple weather application fetching real-time data.',
-    link: '#'
+    title: 'House Price Prediction',
+    tech: 'Python, scikit-learn, Pandas, NumPy, Streamlit, LangGraph, HuggingFace, TF-IDF',
+    description: 'Built an end-to-end ML system that predicts house prices and generates AI-driven BUY/HOLD/AVOID recommendations using market data and comparable properties.',
+    links: [
+      { text: 'GitHub', url: 'https://github.com/vidhisinghal0101/house-price-prediction-ml.git' },
+      { text: 'Live Demo', url: 'https://house-price-prediction-ml-p-9.streamlit.app/' },
+
+    ]
   },
   {
     id: 2,
