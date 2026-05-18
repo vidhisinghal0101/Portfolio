@@ -105,6 +105,25 @@ a.info-value:hover {
   gap: 1.5rem;
 }
 
+.social-icon-link {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-icon-link svg {
+  font-size: 1.3rem;
+}
+
+.social-icon-link:hover {
+  color: var(--accent);
+  transform: translateY(-3px) scale(1.1);
+}
+
 .form-group {
   display: flex;
   flex-direction: column;

@@ -77,20 +77,39 @@
 .role {
   font-size: 2rem;
   margin-bottom: 2rem;
+  min-height: 2.8rem; /* prevents layout shift while typing */
+}
+
+.cursor {
+  display: inline-block;
+  margin-left: 2px;
+  font-weight: 300;
+  animation: blink 0.75s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
 }
 
 .bio {
   font-size: 1.15rem;
   color: var(--text-secondary);
   max-width: 600px;
-  margin: 0 auto 3rem;
+  margin: 0 auto 2rem;
   line-height: 1.8;
 }
 
 .cta-group {
   display: flex;
-  gap: 1.5rem;
+  gap: 1rem;
   justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta-group .btn-primary {
+  padding: 0.6rem 1.3rem;
+  font-size: 0.88rem;
 }
 
 /* Floating Shapes */

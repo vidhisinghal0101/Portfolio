@@ -1,4 +1,5 @@
 import React from 'react';
+import profileImg from '../assets/profile.jpg';
 import './About.css';
 
 
@@ -70,7 +71,7 @@ const About = () => {
         </div>
         <div className="about-image-container">
           <div className="image-wrapper glass-panel">
-            <img src="https://i.pinimg.com/736x/08/70/c0/0870c06d6a0b9fe7eff0894ae02d9f46.jpg" className="about-img" />
+            <img src={profileImg} className="about-img" alt="Vidhi Singhal" />
           </div>
         </div>
       </div>

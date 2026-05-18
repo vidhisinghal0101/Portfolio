@@ -56,8 +56,12 @@ const Contact = () => {
             <div className="info-item">
               <span className="info-label">Socials:</span>
               <div className="social-links">
-                <a href="https://linkedin.com/in/vidhi-singhal-228b32315" target="_blank" rel="noopener noreferrer" className="info-value">LinkedIn</a>
-                <a href="https://github.com/vidhisinghal0101" target="_blank" rel="noopener noreferrer" className="info-value">GitHub</a>
+                <a href="https://linkedin.com/in/vidhi-singhal-228b32315" target="_blank" rel="noopener noreferrer" className="social-icon-link">
+                  <FaLinkedin /> LinkedIn
+                </a>
+                <a href="https://github.com/vidhisinghal0101" target="_blank" rel="noopener noreferrer" className="social-icon-link">
+                  <FaGithub /> GitHub
+                </a>
               </div>
             </div>
             <div className="info-item">

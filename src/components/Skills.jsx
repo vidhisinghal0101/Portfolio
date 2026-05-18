@@ -1,27 +1,46 @@
 import React from 'react';
 import {
   SiPython, SiJavascript, SiTypescript,
-  SiHtml5, SiReact, SiNodedotjs,
-  SiExpress, SiMysql, SiMongodb, SiOpenai, SiPostgresql, SiJsonwebtokens
+  SiHtml5, SiCss, SiReact,
+  SiNodedotjs, SiExpress,
+  SiMysql, SiMongodb, SiPostgresql,
+  SiOpenai, SiGit, SiJsonwebtokens
 } from 'react-icons/si';
-import { FaCode } from 'react-icons/fa';
+import { TbApi } from 'react-icons/tb';
 import './Skills.css';
 
-const skills = [
-  { name: 'HTML5', icon: <SiHtml5 />, color: '#E34F26' },
-  { name: 'CSS3', icon: <FaCode />, color: '#1572B6' },
-  { name: 'JavaScript', icon: <SiJavascript />, color: '#F7DF1E' },
-  { name: 'TypeScript', icon: <SiTypescript />, color: '#3178C6' },
-  { name: 'React', icon: <SiReact />, color: '#61DAFB' },
-  { name: 'React Native', icon: <SiReact />, color: '#61DAFB' },
-  { name: 'Node.js', icon: <SiNodedotjs />, color: '#339933' },
-  { name: 'Express.js', icon: <SiExpress />, color: 'var(--text-primary)' },
-  { name: 'Python', icon: <SiPython />, color: '#3776AB' },
-  { name: 'PostgreSQL', icon: <SiPostgresql />, color: '#336791' },
-  { name: 'MySQL', icon: <SiMysql />, color: '#4479A1' },
-  { name: 'MongoDB', icon: <SiMongodb />, color: '#47A248' },
-  { name: 'JWT', icon: <SiJsonwebtokens />, color: '#FB015B' },
-  { name: 'Gen AI', icon: <SiOpenai />, color: '#74aa9c' },
+const skillCategories = [
+  {
+    category: 'Languages & Markup',
+    skills: [
+      { name: 'Python',      icon: <SiPython />,     color: '#3776AB' },
+      { name: 'JavaScript',  icon: <SiJavascript />, color: '#F7DF1E' },
+      { name: 'TypeScript',  icon: <SiTypescript />, color: '#3178C6' },
+      { name: 'HTML5',       icon: <SiHtml5 />,      color: '#E34F26' },
+      { name: 'CSS3',        icon: <SiCss />,        color: '#1572B6' },
+    ],
+  },
+  {
+    category: 'Frontend & Backend',
+    skills: [
+      { name: 'React',        icon: <SiReact />,        color: '#61DAFB' },
+      { name: 'React Native', icon: <SiReact />,        color: '#61DAFB' },
+      { name: 'Node.js',      icon: <SiNodedotjs />,    color: '#339933' },
+      { name: 'Express.js',   icon: <SiExpress />,      color: 'var(--text-primary)' },
+      { name: 'REST API',     icon: <TbApi />,           color: '#00BCD4' },
+      { name: 'JWT',          icon: <SiJsonwebtokens />, color: '#FB015B' },
+    ],
+  },
+  {
+    category: 'Databases & Tools',
+    skills: [
+      { name: 'PostgreSQL', icon: <SiPostgresql />, color: '#336791' },
+      { name: 'MySQL',      icon: <SiMysql />,      color: '#4479A1' },
+      { name: 'MongoDB',    icon: <SiMongodb />,    color: '#47A248' },
+      { name: 'Git',        icon: <SiGit />,        color: '#F05032' },
+      { name: 'Gen AI',     icon: <SiOpenai />,     color: '#74aa9c' },
+    ],
+  },
 ];
 
 const Skills = () => {
@@ -29,14 +48,23 @@ const Skills = () => {
     <section className="skills-section" id="skills">
       <div className="container">
         <h2 className="section-title text-gradient reveal reveal-up">Technical Skills</h2>
-        <div className="skills-grid reveal reveal-up">
-          {skills.map((skill, index) => (
-            <div key={index} className="skill-card glass-panel floating" style={{ animationDelay: `${index * 0.1}s` }}>
-              <div className="skill-icon" style={{ color: skill.color }}>{skill.icon}</div>
-              <span className="skill-name">{skill.name}</span>
+        {skillCategories.map(({ category, skills }) => (
+          <div key={category} className="skill-category reveal reveal-up">
+            <h3 className="skill-category-title">{category}</h3>
+            <div className="skills-grid">
+              {skills.map((skill, index) => (
+                <div
+                  key={skill.name}
+                  className="skill-card glass-panel floating"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  <div className="skill-icon" style={{ color: skill.color }}>{skill.icon}</div>
+                  <span className="skill-name">{skill.name}</span>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </section>
   );

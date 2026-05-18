@@ -49,9 +49,6 @@ function App() {
         <div className="container nav-content">
           <div className="logo text-gradient">Portfolio</div>
           <div className="nav-links">
-            <a href="#about">About</a>
-            <a href="#projects">Work</a>
-            <a href="#contact">Contact</a>
             <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle theme">
               {theme === 'dark' ? '☀️' : '🌙'}
             </button>
