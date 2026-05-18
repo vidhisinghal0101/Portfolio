@@ -16,15 +16,14 @@ const Contact = () => {
     setStatus('sending');
 
     emailjs.send(
-      'YOUR_SERVICE_ID',       // replace after EmailJS setup
-      'YOUR_TEMPLATE_ID',      // replace after EmailJS setup
+      'service_6cj9des',
+      'template_yeik4es',
       {
-        from_name: formData.name,
+        name: formData.name,
         phone: formData.phone,
         message: formData.message,
-        to_email: 'vidhisinghal102@gmail.com',
       },
-      'YOUR_PUBLIC_KEY'        // replace after EmailJS setup
+      'wWVUwayEUp_DKGzWi'
     )
     .then(() => {
       setStatus('success');
