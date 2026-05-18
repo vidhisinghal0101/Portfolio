@@ -44,7 +44,7 @@ const miniProjectsData = [
     tech: 'Python · scikit-learn · Pandas · NumPy · Streamlit · LangGraph · HuggingFace · TF-IDF',
     description: 'Built an end-to-end ML system that predicts house prices and generates AI-driven BUY/HOLD/AVOID recommendations using market data and comparable properties.',
     image: housePredImg,
-    group: false,
+    group: true,
     links: [
       { text: 'GitHub', url: 'https://github.com/vidhisinghal0101/house-price-prediction-ml.git' },
       { text: 'Live Demo', url: 'https://house-price-prediction-ml-p-9.streamlit.app/' },
@@ -81,18 +81,35 @@ const Projects = () => {
             onKeyDown={e => e.key === 'Enter' && setShowMini(prev => !prev)}
             aria-expanded={showMini}
           >
-            <div className="project-img-container mini-card-img-container">
-              <img src={housePredImg} alt="Mini Projects" className="project-img mini-card-img" />
+            {/* Animated Background Elements for the Lab Theme */}
+            <div className="mini-card-glow-bg"></div>
+            <div className="mini-card-grid-pattern"></div>
+            <div className="mini-card-bubbles">
+              <span className="bubble bubble-1"></span>
+              <span className="bubble bubble-2"></span>
+              <span className="bubble bubble-3"></span>
             </div>
-            <div className="project-info mini-card-info">
-              <span className="mini-card-icon">⚗️</span>
-              <h3 className="project-title">Mini Projects</h3>
-              <p className="project-tech">{miniProjectsData.length} project{miniProjectsData.length !== 1 ? 's' : ''}</p>
+
+            <div className="mini-card-header">
+              <span className="mini-card-badge">🧪 Lab Playground</span>
+              <div className="mini-card-icon-wrapper">
+                <span className="mini-card-icon">⚗️</span>
+              </div>
+            </div>
+
+            <div className="mini-card-info-wrapper">
+              <h3 className="project-title text-gradient-purple">Mini Projects</h3>
+              <span className="mini-card-count-pill">
+                {miniProjectsData.length} Active {miniProjectsData.length !== 1 ? 'Experiments' : 'Experiment'}
+              </span>
               <p className="mini-card-desc">
-                Collection of smaller experiments, UI builds, and practice projects.
+                A sandbox of creative coding, interactive components, ML prototypes, and custom UI builds.
               </p>
-              <span className="mini-card-cta">
-                {showMini ? 'Hide ↑' : 'Explore →'}
+            </div>
+
+            <div className="mini-card-footer">
+              <span className="mini-card-cta-btn">
+                {showMini ? 'Collapse View ↑' : 'Explore Sandbox →'}
               </span>
             </div>
           </div>
