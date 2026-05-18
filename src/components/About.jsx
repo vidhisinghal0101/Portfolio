@@ -27,7 +27,7 @@ const About = () => {
               <p className="resume-meta">Newton School of Technology, Rishihood University | Expected May 2028</p>
             </div>
             <div className="resume-item">
-              <h4>Class XII (Senior Secondary) - 86%</h4>
+              <h4>Class XII (Senior Secondary) - 90%</h4>
               <p className="resume-meta">St. John's School, Faridabad | Jan 2024</p>
             </div>
             <div className="resume-item">
@@ -39,9 +39,9 @@ const About = () => {
           <div className="resume-section">
             <h3 className="subsection-title">Experience</h3>
             <div className="resume-item">
-              <h4>Web & React-Native Developer Intern</h4>
-              <p className="resume-meta">Vybout| June 2026 </p>
-              <p className="resume-desc">Built and shipped scalable web & mobile features using React, React Native, Next.js, Supabase, and PostgreSQL, owning everything from UI to backend integration.</p>
+              <h4>React Native Developer Intern</h4>
+              <p className="resume-meta">Vybout | 2024 – 2025</p>
+              <p className="resume-desc">Built and shipped mobile & web features using React Native, React.js, Next.js, and PostgreSQL across the full product lifecycle. Developed reusable cross-platform UI components and integrated frontend systems with backend APIs.</p>
             </div>
             <div className="resume-item">
               <h4>Social Media Content Intern</h4>

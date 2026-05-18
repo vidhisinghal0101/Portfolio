@@ -1,25 +1,32 @@
 import React from 'react';
 import {
   SiPython, SiJavascript, SiTypescript, SiPostgresql,
-  SiHtml5, SiCss, SiReact, SiNodedotjs,
-  SiExpress, SiMysql, SiMongodb, SiOpenai
+  SiHtml5, SiReact, SiNodedotjs,
+  SiExpress, SiMysql, SiMongodb, SiOpenai,
+  SiTailwindcss, SiNextdotjs, SiPrisma, SiFastapi
 } from 'react-icons/si';
-import { FaCode } from 'react-icons/fa';
+import { FaCode, FaDatabase } from 'react-icons/fa';
 import './Skills.css';
 
 const skills = [
   { name: 'HTML5', icon: <SiHtml5 />, color: '#E34F26' },
-  { name: 'CSS3', icon: <SiCss />, color: '#1572B6' },
+  { name: 'CSS3', icon: <FaCode />, color: '#1572B6' },
   { name: 'JavaScript', icon: <SiJavascript />, color: '#F7DF1E' },
   { name: 'TypeScript', icon: <SiTypescript />, color: '#3178C6' },
   { name: 'React', icon: <SiReact />, color: '#61DAFB' },
   { name: 'React Native', icon: <SiReact />, color: '#61DAFB' },
+  { name: 'Next.js', icon: <SiNextdotjs />, color: 'var(--text-primary)' },
+  { name: 'Tailwind CSS', icon: <SiTailwindcss />, color: '#38BDF8' },
   { name: 'Node.js', icon: <SiNodedotjs />, color: '#339933' },
   { name: 'Express.js', icon: <SiExpress />, color: 'var(--text-primary)' },
+  { name: 'FastAPI', icon: <SiFastapi />, color: '#009688' },
   { name: 'Python', icon: <SiPython />, color: '#3776AB' },
+  { name: 'PostgreSQL', icon: <SiPostgresql />, color: '#336791' },
   { name: 'MySQL', icon: <SiMysql />, color: '#4479A1' },
   { name: 'MongoDB', icon: <SiMongodb />, color: '#47A248' },
-  { name: 'Gen AI', icon: <SiOpenai />, color: '#74aa9c' }
+  { name: 'Prisma ORM', icon: <SiPrisma />, color: '#2D3748' },
+  { name: 'Neon DB', icon: <FaDatabase />, color: '#00E5A0' },
+  { name: 'Gen AI / LLM', icon: <SiOpenai />, color: '#74aa9c' },
 ];
 
 const Skills = () => {
