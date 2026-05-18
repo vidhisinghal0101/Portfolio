@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { SiLeetcode } from 'react-icons/si';
+import emailjs from '@emailjs/browser';
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
 import './Contact.css';
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: '', phone: '', message: '' });
+  const [status, setStatus] = useState('idle'); // idle | sending | success | error
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
@@ -12,14 +13,26 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setStatus('sending');
 
-    // This will open the user's email client (Gmail/Outlook/etc.) 
-    // with the message already written for them.
-    const mailtoLink = `mailto:vidhisinghal102@gmail.com?subject=Portfolio Contact: ${formData.name}&body=${encodeURIComponent(
-      `Hi Vidhi,\n\nMy name is ${formData.name} (Contact: ${formData.phone}).\n\n${formData.message}`
-    )}`;
-
-    window.location.href = mailtoLink;
+    emailjs.send(
+      'YOUR_SERVICE_ID',       // replace after EmailJS setup
+      'YOUR_TEMPLATE_ID',      // replace after EmailJS setup
+      {
+        from_name: formData.name,
+        phone: formData.phone,
+        message: formData.message,
+        to_email: 'vidhisinghal102@gmail.com',
+      },
+      'YOUR_PUBLIC_KEY'        // replace after EmailJS setup
+    )
+    .then(() => {
+      setStatus('success');
+      setFormData({ name: '', phone: '', message: '' });
+    })
+    .catch(() => {
+      setStatus('error');
+    });
   };
 
   return (
@@ -68,7 +81,15 @@ const Contact = () => {
               <label htmlFor="message">Message</label>
               <textarea id="message" value={formData.message} onChange={handleChange} className="form-input" rows="5" placeholder="Type your message..." required></textarea>
             </div>
-            <button type="submit" className="btn-primary w-full">Send Message</button>
+            <button type="submit" className="btn-primary w-full" disabled={status === 'sending'}>
+              {status === 'sending' ? 'Sending...' : 'Send Message'}
+            </button>
+            {status === 'success' && (
+              <p className="form-status success">✅ Message sent! I'll get back to you soon.</p>
+            )}
+            {status === 'error' && (
+              <p className="form-status error">❌ Something went wrong. Try emailing directly.</p>
+            )}
           </form>
         </div>
       </div>
