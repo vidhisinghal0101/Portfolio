@@ -56,6 +56,14 @@ const Projects = () => {
   const [showMini, setShowMini] = useState(false);
   const miniProjectsRef = useRef(null);
 
+  const handleMouseMove = (e) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    e.currentTarget.style.setProperty('--mouse-x', `${x}px`);
+    e.currentTarget.style.setProperty('--mouse-y', `${y}px`);
+  };
+
   useEffect(() => {
     if (showMini && miniProjectsRef.current) {
       setTimeout(() => {
@@ -76,6 +84,7 @@ const Projects = () => {
           <div
             className={`project-card mini-card glass-panel ${showMini ? 'mini-card--open' : ''}`}
             onClick={() => setShowMini(prev => !prev)}
+            onMouseMove={handleMouseMove}
             role="button"
             tabIndex={0}
             onKeyDown={e => e.key === 'Enter' && setShowMini(prev => !prev)}
@@ -122,7 +131,11 @@ const Projects = () => {
               </div>
               <div className="project-info">
                 <h3 className="project-title">{project.title}</h3>
-                <p className="project-tech">{project.tech}</p>
+                <div className="project-tech-container">
+                  {project.tech.split(' · ').map((tech, i) => (
+                    <span key={i} className="project-tech-pill">{tech}</span>
+                  ))}
+                </div>
                 <ul className="project-desc">
                   {Array.isArray(project.description)
                     ? project.description.map((point, i) => <li key={i}>{point}</li>)
@@ -148,8 +161,12 @@ const Projects = () => {
         >
           <h3 className="mini-section-title text-gradient">Mini Projects</h3>
           <div className="mini-project-grid">
-            {miniProjectsData.map(project => (
-              <div key={project.id} className="mini-project-card glass-panel">
+            {miniProjectsData.map((project, index) => (
+              <div
+                key={project.id}
+                className="mini-project-card glass-panel"
+                style={{ '--index': index }}
+              >
                   {project.image && (
                     <div className="project-img-container">
                       <img src={project.image} alt={project.title} className="project-img" />
@@ -160,7 +177,11 @@ const Projects = () => {
                   )}
                   <div className="project-info">
                     <h4 className="mini-project-title">{project.title}</h4>
-                    <p className="mini-project-tech">{project.tech}</p>
+                    <div className="mini-project-tech-container">
+                      {project.tech.split(' · ').map((tech, i) => (
+                        <span key={i} className="mini-project-tech-pill">{tech}</span>
+                      ))}
+                    </div>
                     <p className="mini-project-desc">{project.description}</p>
                     <div className="project-links">
                       {project.links.map((link, index) => (

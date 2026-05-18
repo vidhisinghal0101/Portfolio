@@ -36,6 +36,18 @@ const Hero = () => {
     return () => clearTimeout(timeout);
   }, [charIndex, deleting, roleIndex]);
 
+  const handleMagneticMove = (e) => {
+    const item = e.currentTarget;
+    const rect = item.getBoundingClientRect();
+    const x = e.clientX - (rect.left + rect.width / 2);
+    const y = e.clientY - (rect.top + rect.height / 2);
+    item.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+  };
+
+  const handleMagneticReset = (e) => {
+    e.currentTarget.style.transform = 'translate(0px, 0px)';
+  };
+
   return (
     <section className="hero" id="home">
       <div className="container hero-content">
@@ -50,10 +62,40 @@ const Hero = () => {
             Computer Science student with knowledge of full-stack development and experience building small projects. Passionate about strengthening core concepts through hands-on practice and problem-solving. Growing a little everyday✨.
           </p>
           <div className="cta-group">
-            <a href="#projects" className="btn-primary">View My Work</a>
-            <a href="#contact" className="btn-primary">Get In Touch</a>
-            <a href="#skills" className="btn-primary">View My Skills</a>
-            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="btn-primary">View My Resume</a>
+            <a
+              href="#projects"
+              className="btn-primary"
+              onMouseMove={handleMagneticMove}
+              onMouseLeave={handleMagneticReset}
+            >
+              View My Work
+            </a>
+            <a
+              href="#contact"
+              className="btn-primary"
+              onMouseMove={handleMagneticMove}
+              onMouseLeave={handleMagneticReset}
+            >
+              Get In Touch
+            </a>
+            <a
+              href="#skills"
+              className="btn-primary"
+              onMouseMove={handleMagneticMove}
+              onMouseLeave={handleMagneticReset}
+            >
+              View My Skills
+            </a>
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary"
+              onMouseMove={handleMagneticMove}
+              onMouseLeave={handleMagneticReset}
+            >
+              View My Resume
+            </a>
           </div>
         </div>
       </div>

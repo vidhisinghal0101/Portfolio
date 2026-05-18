@@ -125,33 +125,95 @@ a.info-value:hover {
 }
 
 .form-group {
+  position: relative;
+  margin-bottom: 2rem;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
 }
 
-label {
+.form-group label {
+  position: absolute;
+  left: 1.2rem;
+  top: 1.15rem;
   font-family: 'Outfit', sans-serif;
   font-size: 0.95rem;
   color: var(--text-secondary);
+  pointer-events: none;
+  transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+  transform-origin: left top;
+  z-index: 10;
 }
 
 .form-input {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(15, 10, 25, 0.45);
   border: 1px solid var(--glass-border);
-  padding: 1rem 1.25rem;
-  border-radius: 8px;
+  padding: 1.6rem 1.2rem 0.6rem 1.2rem; /* Comfortable padding room for top floated label */
+  border-radius: 12px;
   color: white;
   width: 100%;
   font-family: 'Inter', sans-serif;
   font-size: 1rem;
+  outline: none;
   transition: all 0.3s ease;
+  position: relative;
+  z-index: 5;
 }
 
+textarea.form-input {
+  padding-top: 1.7rem;
+  resize: vertical;
+}
+
+/* Moving neon glowing borders on active focus */
+.form-group::after {
+  content: '';
+  position: absolute;
+  inset: -1.5px;
+  border-radius: 13.5px;
+  background: linear-gradient(90deg, #a855f7, #ec4899, #6366f1, #a855f7);
+  background-size: 300% 300%;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+
+.form-group:focus-within::after {
+  opacity: 1;
+  animation: borderGlowFlow 4s linear infinite;
+}
+
+@keyframes borderGlowFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Overlay focus styles */
 .form-input:focus {
-  outline: none;
-  border-color: var(--accent);
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(20, 12, 35, 0.65);
+  box-shadow: 0 0 25px rgba(168, 85, 247, 0.2);
+  border-color: transparent;
+}
+
+/* CSS Floating Label Mechanics */
+.form-input:focus ~ label,
+.form-input:not(:placeholder-shown) ~ label {
+  transform: translateY(-0.8rem) scale(0.8);
+  color: var(--accent);
+  text-shadow: 0 0 10px rgba(168, 85, 247, 0.5);
+  font-weight: 600;
+}
+
+/* Micro-indicators when input is valid vs invalid once modified */
+.form-input:not(:focus):not(:placeholder-shown):valid {
+  border-color: rgba(74, 222, 128, 0.45);
+  box-shadow: inset 0 0 10px rgba(74, 222, 128, 0.05);
+}
+
+.form-input:not(:focus):not(:placeholder-shown):invalid {
+  border-color: rgba(248, 113, 113, 0.45);
+  box-shadow: inset 0 0 10px rgba(248, 113, 113, 0.05);
 }
 
 .w-full {

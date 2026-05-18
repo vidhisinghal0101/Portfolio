@@ -7,6 +7,18 @@ const Contact = () => {
   const [formData, setFormData] = useState({ name: '', phone: '', message: '' });
   const [status, setStatus] = useState('idle'); // idle | sending | success | error
 
+  const handleMagneticMove = (e) => {
+    const item = e.currentTarget;
+    const rect = item.getBoundingClientRect();
+    const x = e.clientX - (rect.left + rect.width / 2);
+    const y = e.clientY - (rect.top + rect.height / 2);
+    item.style.transform = `translate(${x * 0.35}px, ${y * 0.35}px)`;
+  };
+
+  const handleMagneticReset = (e) => {
+    e.currentTarget.style.transform = 'translate(0px, 0px)';
+  };
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
   };
@@ -56,10 +68,24 @@ const Contact = () => {
             <div className="info-item">
               <span className="info-label">Socials:</span>
               <div className="social-links">
-                <a href="https://linkedin.com/in/vidhi-singhal-228b32315" target="_blank" rel="noopener noreferrer" className="social-icon-link">
+                <a
+                  href="https://linkedin.com/in/vidhi-singhal-228b32315"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="social-icon-link"
+                  onMouseMove={handleMagneticMove}
+                  onMouseLeave={handleMagneticReset}
+                >
                   <FaLinkedin /> LinkedIn
                 </a>
-                <a href="https://github.com/vidhisinghal0101" target="_blank" rel="noopener noreferrer" className="social-icon-link">
+                <a
+                  href="https://github.com/vidhisinghal0101"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="social-icon-link"
+                  onMouseMove={handleMagneticMove}
+                  onMouseLeave={handleMagneticReset}
+                >
                   <FaGithub /> GitHub
                 </a>
               </div>
@@ -73,18 +99,48 @@ const Contact = () => {
           <form className="contact-form glass-panel decorative-card" onSubmit={handleSubmit}>
             <h3>Send a Message</h3>
             <div className="form-group">
+              <input
+                type="text"
+                id="name"
+                value={formData.name}
+                onChange={handleChange}
+                className="form-input"
+                placeholder=" "
+                required
+              />
               <label htmlFor="name">Name</label>
-              <input type="text" id="name" value={formData.name} onChange={handleChange} className="form-input" placeholder="Your Name" required />
             </div>
             <div className="form-group">
+              <input
+                type="tel"
+                id="phone"
+                value={formData.phone}
+                onChange={handleChange}
+                className="form-input"
+                placeholder=" "
+                required
+              />
               <label htmlFor="phone">Contact Number</label>
-              <input type="tel" id="phone" value={formData.phone} onChange={handleChange} className="form-input" placeholder="Your Phone Number" required />
             </div>
             <div className="form-group">
+              <textarea
+                id="message"
+                value={formData.message}
+                onChange={handleChange}
+                className="form-input"
+                rows="5"
+                placeholder=" "
+                required
+              ></textarea>
               <label htmlFor="message">Message</label>
-              <textarea id="message" value={formData.message} onChange={handleChange} className="form-input" rows="5" placeholder="Type your message..." required></textarea>
             </div>
-            <button type="submit" className="btn-primary w-full" disabled={status === 'sending'}>
+            <button
+              type="submit"
+              className="btn-primary w-full"
+              disabled={status === 'sending'}
+              onMouseMove={handleMagneticMove}
+              onMouseLeave={handleMagneticReset}
+            >
               {status === 'sending' ? 'Sending...' : 'Send Message'}
             </button>
             {status === 'success' && (
