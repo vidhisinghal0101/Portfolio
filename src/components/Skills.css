@@ -131,6 +131,10 @@
   animation: floating 3s ease-in-out infinite;
 }
 
+.floating:hover {
+  animation-play-state: paused;
+}
+
 @keyframes floating {
   0% { transform: translateY(0px); }
   50% { transform: translateY(-10px); }
