@@ -2,7 +2,7 @@ import React from 'react';
 import {
   SiPython, SiJavascript, SiTypescript,
   SiHtml5, SiReact, SiNodedotjs,
-  SiExpress, SiMysql, SiMongodb, SiOpenai, SiPostgresql
+  SiExpress, SiMysql, SiMongodb, SiOpenai, SiPostgresql, SiJsonwebtokens
 } from 'react-icons/si';
 import { FaCode } from 'react-icons/fa';
 import './Skills.css';
@@ -20,6 +20,7 @@ const skills = [
   { name: 'PostgreSQL', icon: <SiPostgresql />, color: '#336791' },
   { name: 'MySQL', icon: <SiMysql />, color: '#4479A1' },
   { name: 'MongoDB', icon: <SiMongodb />, color: '#47A248' },
+  { name: 'JWT', icon: <SiJsonwebtokens />, color: '#FB015B' },
   { name: 'Gen AI', icon: <SiOpenai />, color: '#74aa9c' },
 ];
 
