@@ -63,7 +63,7 @@ const About = () => {
                 <h3 className="subsection-title">Professional Experience</h3>
                 <div className="resume-item">
                   <h4>React Native Developer Intern</h4>
-                  <p className="resume-meta">Vybout | 2024 – 2025</p>
+                  <p className="resume-meta">Vybout | Apr 2026</p>
                   <p className="resume-desc">Built and shipped mobile & web features using React Native, React.js, Next.js, and PostgreSQL across the full product lifecycle. Developed reusable cross-platform UI components and integrated frontend systems with backend APIs.</p>
                 </div>
                 <div className="resume-item">
@@ -73,7 +73,7 @@ const About = () => {
                 </div>
                 <div className="resume-item">
                   <h4>Content Writing Intern</h4>
-                  <p className="resume-meta">Mindeneous | April 2026</p>
+                  <p className="resume-meta">Mindeneous | Apr 2026</p>
                   <p className="resume-desc">Assisted in writing articles, social media posts, and promotional content while maintaining clarity, consistency, and audience engagement.</p>
                 </div>
               </div>
