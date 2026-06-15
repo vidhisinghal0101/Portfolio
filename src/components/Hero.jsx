@@ -59,7 +59,7 @@ const Hero = () => {
             <span className="cursor">|</span>
           </h3>
           <p className="bio">
-            Computer Science student with knowledge of full-stack development and experience building small projects. Passionate about strengthening core concepts through hands-on practice and problem-solving. Growing a little everyday✨.
+            Computer Science student with knowledge of full-stack development and experience building small projects. Passionate about strengthening core concepts through hands-on practice and problem-solving. Growing a little everyday.
           </p>
           <div className="cta-group">
             <a

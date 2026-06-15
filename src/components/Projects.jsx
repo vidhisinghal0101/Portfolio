@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { FaFlask, FaUsers } from 'react-icons/fa';
 import './Projects.css';
 import dawnboxImg from '../assets/dawnbox.png';
 import budgetBuddyImg from '../assets/budgetbuddy.png';
@@ -100,9 +101,11 @@ const Projects = () => {
             </div>
 
             <div className="mini-card-header">
-              <span className="mini-card-badge">🧪 Lab Playground</span>
+              <span className="mini-card-badge" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}>
+                <FaFlask /> Lab Playground
+              </span>
               <div className="mini-card-icon-wrapper">
-                <span className="mini-card-icon">⚗️</span>
+                <span className="mini-card-icon"><FaFlask /></span>
               </div>
             </div>
 
@@ -171,7 +174,9 @@ const Projects = () => {
                     <div className="project-img-container">
                       <img src={project.image} alt={project.title} className="project-img" />
                       {project.group && (
-                        <span className="group-badge">👥 Group Project</span>
+                        <span className="group-badge" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}>
+                          <FaUsers /> Group Project
+                        </span>
                       )}
                     </div>
                   )}

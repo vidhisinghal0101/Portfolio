@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
-import { FaLinkedin, FaGithub } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaCheckCircle, FaExclamationCircle } from 'react-icons/fa';
 import './Contact.css';
 
 const Contact = () => {
@@ -144,10 +144,14 @@ const Contact = () => {
               {status === 'sending' ? 'Sending...' : 'Send Message'}
             </button>
             {status === 'success' && (
-              <p className="form-status success">✅ Message sent! I'll get back to you soon.</p>
+              <p className="form-status success" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}>
+                <FaCheckCircle /> Message sent! I'll get back to you soon.
+              </p>
             )}
             {status === 'error' && (
-              <p className="form-status error">❌ Something went wrong. Try emailing directly.</p>
+              <p className="form-status error" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}>
+                <FaExclamationCircle /> Something went wrong. Try emailing directly.
+              </p>
             )}
           </form>
         </div>

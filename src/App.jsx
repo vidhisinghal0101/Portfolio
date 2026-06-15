@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { FaSun, FaMoon } from 'react-icons/fa';
 import Hero from './components/Hero';
 import Projects from './components/Projects';
 import About from './components/About';
@@ -45,16 +46,9 @@ function App() {
 
   return (
     <>
-      <nav className="navbar">
-        <div className="container nav-content">
-          <div className="logo text-gradient">Portfolio</div>
-          <div className="nav-links">
-            <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle theme">
-              {theme === 'dark' ? '☀️' : '🌙'}
-            </button>
-          </div>
-        </div>
-      </nav>
+      <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle theme">
+        {theme === 'dark' ? '☀️' : '🌙'}
+      </button>
       <main>
         <Hero />
         <About />

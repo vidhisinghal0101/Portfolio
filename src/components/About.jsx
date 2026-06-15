@@ -1,12 +1,7 @@
 import React, { useState } from 'react';
+import { FaGraduationCap, FaBriefcase } from 'react-icons/fa';
 import profileImg from '../assets/profile.jpg';
 import './About.css';
-
-const hobbies = [
-  'Book Reading', 'Makeup Art', 'Gym', 'Swimming',
-  'Dancing', 'Singing', 'Social Media Content',
-  'Language Learning [Hindi, English, German (A2)]'
-];
 
 const About = () => {
   const [activeTab, setActiveTab] = useState('education');
@@ -23,20 +18,15 @@ const About = () => {
               className={`about-tab-btn ${activeTab === 'education' ? 'active' : ''}`}
               onClick={() => setActiveTab('education')}
             >
-              🎓 Education
+              <FaGraduationCap /> Education
             </button>
             <button
               className={`about-tab-btn ${activeTab === 'experience' ? 'active' : ''}`}
               onClick={() => setActiveTab('experience')}
             >
-              💼 Experience
+              <FaBriefcase /> Experience
             </button>
-            <button
-              className={`about-tab-btn ${activeTab === 'interests' ? 'active' : ''}`}
-              onClick={() => setActiveTab('interests')}
-            >
-              ✨ Interests
-            </button>
+
           </div>
 
           <div className="tab-content-panel fade-in-slide" key={activeTab}>
@@ -54,6 +44,14 @@ const About = () => {
                 <div className="resume-item">
                   <h4>Class X (Secondary) - 93%</h4>
                   <p className="resume-meta">St. John's School, Faridabad | Jan 2022</p>
+                </div>
+                <div className="resume-item">
+                  <h4 style={{ marginBottom: '0.8rem' }}>Languages</h4>
+                  <div className="skills-container">
+                    <span className="skill-tag highlight-tag">Hindi</span>
+                    <span className="skill-tag highlight-tag">English</span>
+                    <span className="skill-tag highlight-tag">German (A2)</span>
+                  </div>
                 </div>
               </div>
             )}
@@ -79,19 +77,7 @@ const About = () => {
               </div>
             )}
 
-            {activeTab === 'interests' && (
-              <div className="resume-section">
-                <h3 className="subsection-title">Hobbies & Creative Focus</h3>
-                <p className="about-text" style={{ marginBottom: '1.5rem', lineHeight: '1.8' }}>
-                  When I'm not coding, I love staying active, hitting the gym, swimming, getting lost in a good book and learning new languages. I also enjoy fully expressing my creative side through makeup art, dancing, singing, and creating content for social media!
-                </p>
-                <div className="skills-container">
-                  {hobbies.map(hobby => (
-                    <div key={hobby} className={`skill-tag ${hobby.includes('Language') ? 'highlight-tag' : ''}`}>{hobby}</div>
-                  ))}
-                </div>
-              </div>
-            )}
+
           </div>
 
         </div>
