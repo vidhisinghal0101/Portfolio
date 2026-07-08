@@ -60,19 +60,31 @@ const About = () => {
               <div className="resume-section">
                 <h3 className="subsection-title">Professional Experience</h3>
                 <div className="resume-item">
+                  <h4>AI Engineer & SDE Intern</h4>
+                  <p className="resume-meta">Studyzone365 (Study2Win Pvt Ltd) | Present</p>
+                  <ul className="resume-desc">
+                    <li>Spearheading research and development for a new AI-driven project, identifying innovative solutions and technical requirements.</li>
+                    <li>Designing and structuring comprehensive new courses focusing on study abroad preparation and coding/programming.</li>
+                    <li>Led frontend development for the company's website, ensuring optimal performance, seamless user experience, and up-to-date content.</li>
+                  </ul>
+                </div>
+                <div className="resume-item">
                   <h4>React Native Developer Intern</h4>
                   <p className="resume-meta">Vybout | Apr 2026</p>
-                  <p className="resume-desc">Built and shipped mobile & web features using React Native, React.js, Next.js, and PostgreSQL across the full product lifecycle. Developed reusable cross-platform UI components and integrated frontend systems with backend APIs.</p>
+                  <ul className="resume-desc">
+                    <li>Built and shipped mobile & web features using React Native, React.js, Next.js, and PostgreSQL across the full product lifecycle.</li>
+                    <li>Developed reusable cross-platform UI components and integrated frontend systems with backend APIs.</li>
+                    <li>Gained hands-on early-stage startup experience working end-to-end in fast-paced, high-velocity teams.</li>
+                  </ul>
                 </div>
                 <div className="resume-item">
                   <h4>Social Media Content Intern</h4>
                   <p className="resume-meta">DreamHitch | Oct 2024</p>
-                  <p className="resume-desc">Secured this internship utilizing content creation experience to develop engaging media for digital platforms.</p>
-                </div>
-                <div className="resume-item">
-                  <h4>Content Writing Intern</h4>
-                  <p className="resume-meta">Mindeneous | Apr 2026</p>
-                  <p className="resume-desc">Assisted in writing articles, social media posts, and promotional content while maintaining clarity, consistency, and audience engagement.</p>
+                  <ul className="resume-desc">
+                    <li>At DreamHitch, I worked as a Social Media Content Intern for a very short period.</li>
+                    <li>My primary responsibility was creating a marketing presentation about the company's platform.</li>
+                    <li>I researched the website, understood its features, services, and value proposition, and converted that information into a clear and engaging presentation that could be used for marketing and communication purposes.</li>
+                  </ul>
                 </div>
               </div>
             )}

@@ -2,9 +2,9 @@ import React from 'react';
 import {
   SiPython, SiJavascript, SiTypescript,
   SiHtml5, SiCss, SiReact,
-  SiNodedotjs, SiExpress,
+  SiNodedotjs, SiExpress, SiPrisma,
   SiMysql, SiMongodb, SiPostgresql,
-  SiOpenai, SiGit, SiJsonwebtokens
+  SiOpenai
 } from 'react-icons/si';
 import { TbApi } from 'react-icons/tb';
 import './Skills.css';
@@ -26,9 +26,8 @@ const skillCategories = [
       { name: 'React',        icon: <SiReact />,        color: '#61DAFB' },
       { name: 'React Native', icon: <SiReact />,        color: '#61DAFB' },
       { name: 'Node.js',      icon: <SiNodedotjs />,    color: '#339933' },
-      { name: 'Express.js',   icon: <SiExpress />,      color: 'var(--text-primary)' },
-      { name: 'REST API',     icon: <TbApi />,           color: '#00BCD4' },
-      { name: 'JWT',          icon: <SiJsonwebtokens />, color: '#FB015B' },
+      { name: 'Express.js', subtitle: 'Prisma ORM', icon: <SiExpress />, color: 'var(--text-primary)' },
+      { name: 'REST / FastAPI', icon: <TbApi />,         color: '#009485' },
     ],
   },
   {
@@ -37,8 +36,7 @@ const skillCategories = [
       { name: 'PostgreSQL', icon: <SiPostgresql />, color: '#336791' },
       { name: 'MySQL',      icon: <SiMysql />,      color: '#4479A1' },
       { name: 'MongoDB',    icon: <SiMongodb />,    color: '#47A248' },
-      { name: 'Git',        icon: <SiGit />,        color: '#F05032' },
-      { name: 'Gen AI',     icon: <SiOpenai />,     color: '#74aa9c' },
+      { name: 'Gen AI', subtitle: 'RAG, LLMs', icon: <SiOpenai />, color: '#74aa9c' },
     ],
   },
 ];
@@ -60,6 +58,7 @@ const Skills = () => {
                 >
                   <div className="skill-icon" style={{ color: skill.color }}>{skill.icon}</div>
                   <span className="skill-name">{skill.name}</span>
+                  {skill.subtitle && <span className="skill-subtitle">{skill.subtitle}</span>}
                 </div>
               ))}
             </div>

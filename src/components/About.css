@@ -47,7 +47,7 @@
 }
 
 .resume-meta {
-  font-size: 0.9rem;
+  font-size: 1.05rem;
   color: var(--accent);
   margin-bottom: 0.4rem;
   font-family: 'Outfit', sans-serif;
@@ -57,6 +57,12 @@
   font-size: 0.95rem;
   color: var(--text-secondary);
   line-height: 1.6;
+}
+
+ul.resume-desc {
+  padding-left: 20px;
+  margin: 0;
+  list-style-type: disc;
 }
 
 .skills-container {

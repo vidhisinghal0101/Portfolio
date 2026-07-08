@@ -138,6 +138,18 @@
   z-index: 1;
 }
 
+.skill-subtitle {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+  opacity: 0.8;
+  margin-top: -0.8rem;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
 .skill-card:hover .skill-name {
   color: var(--text-primary);
 }

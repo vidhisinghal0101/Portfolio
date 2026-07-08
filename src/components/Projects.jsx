@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { FaFlask, FaUsers } from 'react-icons/fa';
+import { FaTerminal, FaUsers } from 'react-icons/fa';
 import './Projects.css';
 import dawnboxImg from '../assets/dawnbox.png';
 import budgetBuddyImg from '../assets/budgetbuddy.png';
@@ -94,28 +94,23 @@ const Projects = () => {
             {/* Animated Background Elements for the Lab Theme */}
             <div className="mini-card-glow-bg"></div>
             <div className="mini-card-grid-pattern"></div>
-            <div className="mini-card-bubbles">
-              <span className="bubble bubble-1"></span>
-              <span className="bubble bubble-2"></span>
-              <span className="bubble bubble-3"></span>
-            </div>
 
             <div className="mini-card-header">
               <span className="mini-card-badge" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}>
-                <FaFlask /> Lab Playground
+                <FaTerminal /> Dev Sandbox
               </span>
               <div className="mini-card-icon-wrapper">
-                <span className="mini-card-icon"><FaFlask /></span>
+                <span className="mini-card-icon"><FaTerminal /></span>
               </div>
             </div>
 
             <div className="mini-card-info-wrapper">
               <h3 className="project-title text-gradient-purple">Mini Projects</h3>
               <span className="mini-card-count-pill">
-                {miniProjectsData.length} Active {miniProjectsData.length !== 1 ? 'Experiments' : 'Experiment'}
+                {miniProjectsData.length} Active {miniProjectsData.length !== 1 ? 'Builds' : 'Build'}
               </span>
               <p className="mini-card-desc">
-                A sandbox of creative coding, interactive components, ML prototypes, and custom UI builds.
+                A workspace for creative coding, interactive components, ML prototypes, and custom UI builds.
               </p>
             </div>
 
