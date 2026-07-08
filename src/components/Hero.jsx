@@ -8,10 +8,11 @@ const roles = [
 ];
 
 const Hero = () => {
-  const [displayed, setDisplayed] = useState('');
   const [roleIndex, setRoleIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
   const [deleting, setDeleting] = useState(false);
+
+  const displayed = roles[roleIndex].slice(0, charIndex);
 
   useEffect(() => {
     const current = roles[roleIndex];
@@ -28,11 +29,12 @@ const Hero = () => {
       timeout = setTimeout(() => setCharIndex(i => i - 1), 45);
     } else if (deleting && charIndex === 0) {
       // Move to next role
-      setDeleting(false);
-      setRoleIndex(i => (i + 1) % roles.length);
+      timeout = setTimeout(() => {
+        setDeleting(false);
+        setRoleIndex(i => (i + 1) % roles.length);
+      }, 150);
     }
 
-    setDisplayed(current.slice(0, charIndex));
     return () => clearTimeout(timeout);
   }, [charIndex, deleting, roleIndex]);
 

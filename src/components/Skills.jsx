@@ -18,6 +18,7 @@ const skillCategories = [
       { name: 'TypeScript',  icon: <SiTypescript />, color: '#3178C6' },
       { name: 'HTML5',       icon: <SiHtml5 />,      color: '#E34F26' },
       { name: 'CSS3',        icon: <SiCss />,        color: '#1572B6' },
+      { name: 'Gen AI', icon: <SiOpenai />, color: '#74aa9c' },
     ],
   },
   {
@@ -36,7 +37,6 @@ const skillCategories = [
       { name: 'PostgreSQL', icon: <SiPostgresql />, color: '#336791' },
       { name: 'MySQL',      icon: <SiMysql />,      color: '#4479A1' },
       { name: 'MongoDB',    icon: <SiMongodb />,    color: '#47A248' },
-      { name: 'Gen AI', icon: <SiOpenai />, color: '#74aa9c' },
     ],
   },
 ];
