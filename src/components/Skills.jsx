@@ -36,7 +36,7 @@ const skillCategories = [
       { name: 'PostgreSQL', icon: <SiPostgresql />, color: '#336791' },
       { name: 'MySQL',      icon: <SiMysql />,      color: '#4479A1' },
       { name: 'MongoDB',    icon: <SiMongodb />,    color: '#47A248' },
-      { name: 'Gen AI', subtitle: 'RAG, LLMs', icon: <SiOpenai />, color: '#74aa9c' },
+
     ],
   },
 ];
