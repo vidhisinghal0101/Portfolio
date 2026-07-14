@@ -21,7 +21,7 @@
   margin-bottom: 1.5rem;
 }
 
-.resume-section {
+.timeline-section {
   margin-top: 2.5rem;
 }
 
@@ -34,11 +34,11 @@
   padding-bottom: 0.5rem;
 }
 
-.resume-item {
+.timeline-item {
   margin-bottom: 1.5rem;
 }
 
-.resume-item h4 {
+.timeline-item h4 {
   font-family: 'Inter', sans-serif;
   font-size: 1.1rem;
   font-weight: 600;
@@ -46,20 +46,20 @@
   margin-bottom: 0.2rem;
 }
 
-.resume-meta {
+.timeline-meta {
   font-size: 1.05rem;
   color: var(--accent);
   margin-bottom: 0.4rem;
   font-family: 'Outfit', sans-serif;
 }
 
-.resume-desc {
+.timeline-desc {
   font-size: 0.95rem;
   color: var(--text-secondary);
   line-height: 1.6;
 }
 
-ul.resume-desc {
+ul.timeline-desc {
   padding-left: 20px;
   margin: 0;
   list-style-type: disc;

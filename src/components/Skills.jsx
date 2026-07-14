@@ -45,7 +45,10 @@ const Skills = () => {
   return (
     <section className="skills-section" id="skills">
       <div className="container">
-        <h2 className="section-title text-gradient reveal reveal-up">Technical Skills</h2>
+        <div className="section-header reveal reveal-up">
+          <div className="section-bg-text">SKILLS</div>
+          <h2 className="section-title text-gradient">Technical Skills</h2>
+        </div>
         {skillCategories.map(({ category, skills }) => (
           <div key={category} className="skill-category reveal reveal-up">
             <h3 className="skill-category-title">{category}</h3>

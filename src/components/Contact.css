@@ -1,5 +1,5 @@
 .contact {
-  padding-top: 40px;
+  padding-top: 80px;
 }
 
 .contact-container {
@@ -92,16 +92,6 @@ a.info-value:hover {
   transform: translateY(-3px) scale(1.1);
 }
 
-.resume-btn {
-  margin-top: 0.5rem;
-  padding: 0.6rem 1.5rem;
-  font-size: 0.9rem;
-}
-
-.info-item:hover .resume-btn {
-  transform: scale(1);
-  /* Don't scale the button as much as the text */
-}
 
 .social-links {
   display: flex;

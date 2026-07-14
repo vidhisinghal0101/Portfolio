@@ -1,5 +1,5 @@
 .projects {
-  padding-bottom: 40px;
+  padding-bottom: 80px;
 }
 
 .section-title {
@@ -21,6 +21,24 @@
   display: flex;
   flex-direction: column;
   min-height: 350px;
+  height: 100%;
+}
+
+.project-card-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  will-change: transform;
+}
+
+@media (min-width: 901px) {
+  .parallax-up {
+    transform: none;
+  }
+
+  .parallax-down {
+    transform: none;
+  }
 }
 
 .centered .project-info {
@@ -52,8 +70,10 @@
 }
 
 .project-title {
-  font-size: 1.8rem;
-  margin-bottom: 0.5rem;
+  font-size: 2rem;
+  margin-bottom: 0.8rem;
+  text-align: center;
+  width: 100%;
 }
 
 .project-tech-container {
@@ -61,10 +81,11 @@
   flex-wrap: wrap;
   gap: 0.5rem;
   margin-bottom: 1.5rem;
+  justify-content: center;
 }
 
 .project-tech-pill {
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   font-weight: 600;
   color: var(--accent);
   background: rgba(168, 85, 247, 0.06);
@@ -97,7 +118,7 @@
   position: relative;
   padding-left: 1.2rem;
   margin-bottom: 0.55rem;
-  font-size: 1.05rem;
+  font-size: 1.15rem;
 }
 
 .project-desc li::before {
@@ -113,6 +134,7 @@
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .project-link {
@@ -460,6 +482,11 @@
   overflow: hidden;
 }
 
+.mini-projects-wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
 .mini-projects-section--visible {
   grid-template-rows: 1fr;
   opacity: 1;
@@ -530,8 +557,10 @@
 }
 
 .mini-project-title {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
+  font-size: 2rem;
+  margin-bottom: 0.8rem;
+  text-align: center;
+  width: 100%;
 }
 
 .mini-project-tech-container {
@@ -539,10 +568,11 @@
   flex-wrap: wrap;
   gap: 0.4rem;
   margin-bottom: 1.2rem;
+  justify-content: center;
 }
 
 .mini-project-tech-pill {
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   font-weight: 600;
   color: var(--accent);
   background: rgba(168, 85, 247, 0.06);
@@ -563,7 +593,7 @@
 
 .mini-project-desc {
   color: var(--text-secondary);
-  font-size: 0.95rem;
+  font-size: 1.15rem;
   line-height: 1.6;
   margin-bottom: 1.5rem;
   flex-grow: 1;

@@ -76,75 +76,80 @@ const Projects = () => {
   return (
     <section className="projects" id="projects">
       <div className="container">
-        <div className="projects-header reveal reveal-up">
+        <div className="section-header reveal reveal-up">
+          <div className="section-bg-text">PROJECTS</div>
           <h2 className="section-title text-gradient">My Projects</h2>
         </div>
 
         <div className="project-grid reveal reveal-up">
           {/* Mini Projects card — first in grid */}
-          <div
-            className={`project-card mini-card glass-panel ${showMini ? 'mini-card--open' : ''}`}
-            onClick={() => setShowMini(prev => !prev)}
-            onMouseMove={handleMouseMove}
-            role="button"
-            tabIndex={0}
-            onKeyDown={e => e.key === 'Enter' && setShowMini(prev => !prev)}
-            aria-expanded={showMini}
-          >
-            {/* Animated Background Elements for the Lab Theme */}
-            <div className="mini-card-glow-bg"></div>
-            <div className="mini-card-grid-pattern"></div>
+          <div className="project-card-wrapper parallax-up">
+            <div
+              className={`project-card mini-card glass-panel ${showMini ? 'mini-card--open' : ''}`}
+              onClick={() => setShowMini(prev => !prev)}
+              onMouseMove={handleMouseMove}
+              role="button"
+              tabIndex={0}
+              onKeyDown={e => e.key === 'Enter' && setShowMini(prev => !prev)}
+              aria-expanded={showMini}
+            >
+              {/* Animated Background Elements for the Lab Theme */}
+              <div className="mini-card-glow-bg"></div>
+              <div className="mini-card-grid-pattern"></div>
 
-            <div className="mini-card-header">
-              <span className="mini-card-badge" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}>
-                <FaTerminal /> Dev Sandbox
-              </span>
-              <div className="mini-card-icon-wrapper">
-                <span className="mini-card-icon"><FaTerminal /></span>
+              <div className="mini-card-header">
+                <span className="mini-card-badge" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}>
+                  <FaTerminal /> Dev Sandbox
+                </span>
+                <div className="mini-card-icon-wrapper">
+                  <span className="mini-card-icon"><FaTerminal /></span>
+                </div>
               </div>
-            </div>
 
-            <div className="mini-card-info-wrapper">
-              <h3 className="project-title text-gradient-purple">Mini Projects</h3>
-              <span className="mini-card-count-pill">
-                {miniProjectsData.length} Active {miniProjectsData.length !== 1 ? 'Builds' : 'Build'}
-              </span>
-              <p className="mini-card-desc">
-                A workspace for creative coding, interactive components, ML prototypes, and custom UI builds.
-              </p>
-            </div>
+              <div className="mini-card-info-wrapper">
+                <h3 className="project-title text-gradient-purple">Mini Projects</h3>
+                <span className="mini-card-count-pill">
+                  {miniProjectsData.length} Active {miniProjectsData.length !== 1 ? 'Builds' : 'Build'}
+                </span>
+                <p className="mini-card-desc">
+                  A workspace for creative coding, interactive components, ML prototypes, and custom UI builds.
+                </p>
+              </div>
 
-            <div className="mini-card-footer">
-              <span className="mini-card-cta-btn">
-                {showMini ? 'Collapse View ↑' : 'Explore Sandbox →'}
-              </span>
+              <div className="mini-card-footer">
+                <span className="mini-card-cta-btn">
+                  {showMini ? 'Collapse View ↑' : 'Explore Sandbox →'}
+                </span>
+              </div>
             </div>
           </div>
 
           {/* Main projects */}
-          {projectsData.map(project => (
-            <div key={project.id} className="project-card glass-panel">
-              <div className="project-img-container">
-                <img src={project.image} alt={project.title} className="project-img" />
-              </div>
-              <div className="project-info">
-                <h3 className="project-title">{project.title}</h3>
-                <div className="project-tech-container">
-                  {project.tech.split(' · ').map((tech, i) => (
-                    <span key={i} className="project-tech-pill">{tech}</span>
-                  ))}
+          {projectsData.map((project, idx) => (
+            <div key={project.id} className={`project-card-wrapper ${idx % 2 === 0 ? 'parallax-down' : 'parallax-up'}`}>
+              <div className="project-card glass-panel">
+                <div className="project-img-container">
+                  <img src={project.image} alt={project.title} className="project-img" />
                 </div>
-                <ul className="project-desc">
-                  {Array.isArray(project.description)
-                    ? project.description.map((point, i) => <li key={i}>{point}</li>)
-                    : <li>{project.description}</li>}
-                </ul>
-                <div className="project-links">
-                  {project.links.map((link, index) => (
-                    <a key={index} href={link.url} target="_blank" rel="noopener noreferrer" className="project-link" onClick={e => e.stopPropagation()}>
-                      {link.text} →
-                    </a>
-                  ))}
+                <div className="project-info">
+                  <h3 className="project-title">{project.title}</h3>
+                  <div className="project-tech-container">
+                    {project.tech.split(' · ').map((tech, i) => (
+                      <span key={i} className="project-tech-pill">{tech}</span>
+                    ))}
+                  </div>
+                  <ul className="project-desc">
+                    {Array.isArray(project.description)
+                      ? project.description.map((point, i) => <li key={i}>{point}</li>)
+                      : <li>{project.description}</li>}
+                  </ul>
+                  <div className="project-links">
+                    {project.links.map((link, index) => (
+                      <a key={index} href={link.url} target="_blank" rel="noopener noreferrer" className="project-link" onClick={e => e.stopPropagation()}>
+                        {link.text} →
+                      </a>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
@@ -157,42 +162,44 @@ const Projects = () => {
           id="mini-projects"
           className={`mini-projects-section ${showMini ? 'mini-projects-section--visible' : ''}`}
         >
-          <h3 className="mini-section-title text-gradient">Mini Projects</h3>
-          <div className="mini-project-grid">
-            {miniProjectsData.map((project, index) => (
-              <div
-                key={project.id}
-                className="mini-project-card glass-panel"
-                style={{ '--index': index }}
-              >
-                  {project.image && (
-                    <div className="project-img-container">
-                      <img src={project.image} alt={project.title} className="project-img" />
-                      {project.group && (
-                        <span className="group-badge" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}>
-                          <FaUsers /> Group Project
-                        </span>
-                      )}
-                    </div>
-                  )}
-                  <div className="project-info">
-                    <h4 className="mini-project-title">{project.title}</h4>
-                    <div className="mini-project-tech-container">
-                      {project.tech.split(' · ').map((tech, i) => (
-                        <span key={i} className="mini-project-tech-pill">{tech}</span>
-                      ))}
-                    </div>
-                    <p className="mini-project-desc">{project.description}</p>
-                    <div className="project-links">
-                      {project.links.map((link, index) => (
-                        <a key={index} href={link.url} target="_blank" rel="noopener noreferrer" className="project-link">
-                          {link.text} →
-                        </a>
-                      ))}
+          <div className="mini-projects-wrapper">
+            <h3 className="mini-section-title text-gradient">Mini Projects</h3>
+            <div className="mini-project-grid">
+              {miniProjectsData.map((project, index) => (
+                <div
+                  key={project.id}
+                  className="mini-project-card glass-panel"
+                  style={{ '--index': index }}
+                >
+                    {project.image && (
+                      <div className="project-img-container">
+                        <img src={project.image} alt={project.title} className="project-img" />
+                        {project.group && (
+                          <span className="group-badge" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}>
+                            <FaUsers /> Group Project
+                          </span>
+                        )}
+                      </div>
+                    )}
+                    <div className="project-info">
+                      <h4 className="mini-project-title">{project.title}</h4>
+                      <div className="mini-project-tech-container">
+                        {project.tech.split(' · ').map((tech, i) => (
+                          <span key={i} className="mini-project-tech-pill">{tech}</span>
+                        ))}
+                      </div>
+                      <p className="mini-project-desc">{project.description}</p>
+                      <div className="project-links">
+                        {project.links.map((link, index) => (
+                          <a key={index} href={link.url} target="_blank" rel="noopener noreferrer" className="project-link">
+                            {link.text} →
+                          </a>
+                        ))}
+                      </div>
                     </div>
                   </div>
-                </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
 

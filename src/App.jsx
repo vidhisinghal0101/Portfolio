@@ -44,8 +44,32 @@ function App() {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    let ticking = false;
+
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          document.documentElement.style.setProperty('--scroll-y', `${window.scrollY}px`);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll(); // Initial call
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <>
+      <div className="parallax-bg-shapes">
+        <div className="bg-shape shape-purple"></div>
+        <div className="bg-shape shape-pink"></div>
+        <div className="bg-shape shape-blue"></div>
+      </div>
       <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle theme">
         {theme === 'dark' ? '☀️' : '🌙'}
       </button>

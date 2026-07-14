@@ -88,23 +88,17 @@ const Hero = () => {
             >
               View My Skills
             </a>
-            <a
-              href="/resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary"
-              onMouseMove={handleMagneticMove}
-              onMouseLeave={handleMagneticReset}
-            >
-              View My Resume
-            </a>
           </div>
         </div>
       </div>
       
       {/* Decorative floating elements */}
-      <div className="circle-shape shape-1"></div>
-      <div className="circle-shape shape-2"></div>
+      <div className="parallax-wrapper shape-1-wrapper">
+        <div className="circle-shape shape-1"></div>
+      </div>
+      <div className="parallax-wrapper shape-2-wrapper">
+        <div className="circle-shape shape-2"></div>
+      </div>
     </section>
   );
 };

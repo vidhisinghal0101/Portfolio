@@ -49,7 +49,10 @@ const Contact = () => {
   return (
     <section className="contact" id="contact">
       <div className="container contact-container">
-        <h2 className="section-title text-gradient reveal reveal-up">Let's Get In Touch</h2>
+        <div className="section-header reveal reveal-up">
+          <div className="section-bg-text">CONTACT</div>
+          <h2 className="section-title text-gradient">Let's Get In Touch</h2>
+        </div>
         <p className="contact-desc reveal reveal-up">
           I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
         </p>

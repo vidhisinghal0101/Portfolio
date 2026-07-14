@@ -46,4 +46,57 @@ footer {
   background: var(--bg-secondary);
 }
 
+/* Parallax Ambient Background Shapes */
+.parallax-bg-shapes {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.bg-shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.22;
+  will-change: transform;
+  transition: background-color 0.4s ease;
+}
+
+[data-theme="light"] .bg-shape {
+  opacity: 0.12;
+  filter: blur(110px);
+}
+
+.shape-purple {
+  width: 45vw;
+  height: 45vw;
+  background-color: #8b008b;
+  top: 5vh;
+  left: -15vw;
+  transform: translateY(calc(var(--scroll-y, 0px) * -0.2));
+}
+
+.shape-pink {
+  width: 50vw;
+  height: 50vw;
+  background-color: #dc143c;
+  top: 45vh;
+  right: -20vw;
+  transform: translateY(calc(var(--scroll-y, 0px) * -0.15));
+}
+
+.shape-blue {
+  width: 35vw;
+  height: 35vw;
+  background-color: #6366f1;
+  bottom: -10vh;
+  left: 15vw;
+  transform: translateY(calc(var(--scroll-y, 0px) * -0.3));
+}
+
 
