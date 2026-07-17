@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import { SiLeetcode } from 'react-icons/si';
 import './Hero.css';
 
 const roles = [
@@ -64,29 +66,23 @@ const Hero = () => {
             Computer Science student with knowledge of full-stack development and experience building small projects. Passionate about strengthening core concepts through hands-on practice and problem-solving. Growing a little everyday.
           </p>
           <div className="cta-group">
-            <a
-              href="#projects"
-              className="btn-primary"
-              onMouseMove={handleMagneticMove}
-              onMouseLeave={handleMagneticReset}
-            >
-              View My Work
+            <a href="#projects" className="btn-primary" onMouseMove={handleMagneticMove} onMouseLeave={handleMagneticReset}>View My Work</a>
+            <a href="#contact" className="btn-primary" onMouseMove={handleMagneticMove} onMouseLeave={handleMagneticReset}>Get In Touch</a>
+            <a href="#skills" className="btn-primary" onMouseMove={handleMagneticMove} onMouseLeave={handleMagneticReset}>View My Skills</a>
+          </div>
+
+          <div className="hero-socials">
+            <a href="https://github.com/vidhisinghal0101" target="_blank" rel="noopener noreferrer" className="hero-social-btn" aria-label="GitHub">
+              <FaGithub />
             </a>
-            <a
-              href="#contact"
-              className="btn-primary"
-              onMouseMove={handleMagneticMove}
-              onMouseLeave={handleMagneticReset}
-            >
-              Get In Touch
+            <a href="https://linkedin.com/in/vidhi-singhal-228b32315" target="_blank" rel="noopener noreferrer" className="hero-social-btn" aria-label="LinkedIn">
+              <FaLinkedin />
             </a>
-            <a
-              href="#skills"
-              className="btn-primary"
-              onMouseMove={handleMagneticMove}
-              onMouseLeave={handleMagneticReset}
-            >
-              View My Skills
+            <a href="mailto:vidhisinghal102@gmail.com" className="hero-social-btn" aria-label="Email">
+              <FaEnvelope />
+            </a>
+            <a href="https://leetcode.com/u/vidhisinghal0101/" target="_blank" rel="noopener noreferrer" className="hero-social-btn" aria-label="LeetCode">
+              <SiLeetcode />
             </a>
           </div>
         </div>

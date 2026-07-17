@@ -78,7 +78,7 @@ const Projects = () => {
       <div className="container">
         <div className="section-header reveal reveal-up">
           <div className="section-bg-text">PROJECTS</div>
-          <h2 className="section-title text-gradient">My Projects</h2>
+          <h2 className="section-title text-gradient">Projects</h2>
         </div>
 
         <div className="project-grid reveal reveal-up">

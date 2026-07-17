@@ -8,6 +8,11 @@
   margin-bottom: 4rem;
 }
 
+.projects .section-title {
+  text-align: center;
+  margin-bottom: 0;
+}
+
 .project-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -161,17 +166,11 @@
 
 /* Projects Header */
 .projects-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   margin-bottom: 3rem;
-  flex-wrap: wrap;
-  gap: 1rem;
 }
 
 .projects-header .section-title {
   margin-bottom: 0;
-  text-align: left;
 }
 
 /* Mini Projects Card in grid */
@@ -191,7 +190,7 @@
   background: rgba(15, 10, 25, 0.4);
 }
 
-.mini-card:hover {
+.mini-card.glass-panel:hover {
   transform: translateY(-4px);
   border-color: rgba(168, 85, 247, 0.6);
   background: rgba(20, 12, 35, 0.55);
@@ -328,8 +327,8 @@
 }
 
 .mini-card-icon-wrapper {
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -344,7 +343,7 @@
 .mini-card-icon-wrapper::before {
   content: '';
   position: absolute;
-  inset: -6px;
+  inset: -8px;
   border-radius: 50%;
   border: 1px solid rgba(168, 85, 247, 0.15);
   transition: all 0.4s ease;
@@ -355,21 +354,22 @@
   border-style: solid;
   background: rgba(168, 85, 247, 0.15);
   box-shadow: inset 0 0 20px rgba(168, 85, 247, 0.25),
-              0 0 25px rgba(168, 85, 247, 0.15);
+              0 0 35px rgba(168, 85, 247, 0.2);
 }
 
 .mini-card:hover .mini-card-icon-wrapper::before {
-  inset: -10px;
+  inset: -14px;
   border-color: rgba(168, 85, 247, 0.3);
   transform: rotate(180deg);
 }
 
 .mini-card-icon {
-  font-size: 4.5rem;
+  font-size: 3.8rem;
   line-height: 1;
   display: block;
   transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-  filter: drop-shadow(0 0 8px rgba(168, 85, 247, 0.5));
+  filter: drop-shadow(0 0 10px rgba(168, 85, 247, 0.6));
+  color: #c084fc;
 }
 
 .mini-card:hover .mini-card-icon {
