@@ -8,6 +8,7 @@ import {
 } from 'react-icons/si';
 import { TbApi } from 'react-icons/tb';
 import './Skills.css';
+import SectionParallax from './SectionParallax';
 
 const skillCategories = [
   {
@@ -84,6 +85,7 @@ const SkillCard = ({ skill, index }) => {
 const Skills = () => {
   return (
     <section className="skills-section" id="skills">
+      <SectionParallax />
       <div className="container">
         <div className="section-header reveal reveal-up">
           <div className="section-bg-text">SKILLS</div>

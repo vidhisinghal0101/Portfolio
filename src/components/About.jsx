@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 import { FaGraduationCap, FaBriefcase } from 'react-icons/fa';
 import profileImg from '../assets/profile.jpg';
 import './About.css';
+import SectionParallax from './SectionParallax';
 
 const About = () => {
   const [activeTab, setActiveTab] = useState('education');
 
   return (
     <section className="about" id="about">
+      <SectionParallax />
       <div className="container about-content">
         <div className="about-text-container reveal reveal-up">
           <div className="section-header">

@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 import { SiLeetcode } from 'react-icons/si';
 import './Hero.css';
+import SectionParallax from './SectionParallax';
 
 const roles = [
   'Full Stack Developer',
@@ -40,21 +41,7 @@ const Hero = () => {
     return () => clearTimeout(timeout);
   }, [charIndex, deleting, roleIndex]);
 
-  const bgRef = useRef(null);
-  const midRef = useRef(null);
-  const fgRef = useRef(null);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      if (bgRef.current) bgRef.current.style.transform = `translateY(${scrollY * 0.1}px)`;
-      if (midRef.current) midRef.current.style.transform = `translateY(${scrollY * 0.15}px)`;
-      if (fgRef.current) fgRef.current.style.transform = `translateY(${scrollY * 0.2}px)`;
-    };
-    
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  // The parallax is now handled by SectionParallax component
 
   const handleMagneticMove = (e) => {
     const item = e.currentTarget;
@@ -75,8 +62,7 @@ const Hero = () => {
           <h2 className="greeting">Hello, I'm</h2>
           <h1 className="name text-gradient">Vidhi Singhal</h1>
           <h3 className="role accent-gradient">
-            <span className="typed-text">{displayed}</span>
-            <span className="cursor">|</span>
+            &lt; <span className="typed-text">{displayed}</span> &gt;
           </h3>
           <p className="bio">
             Computer Science student with a strong foundation in full-stack development, Artificial Intelligence, and problem-solving. Experienced in building AI powered applications and real-world software projects, 250+ LeetCode.
@@ -104,14 +90,8 @@ const Hero = () => {
         </div>
       </div>
       
-      {/* Decorative floating elements */}
-      <div className="parallax-layer bg-layer" ref={bgRef}></div>
-      <div className="parallax-layer mid-layer" ref={midRef}>
-        <div className="circle-shape shape-1"></div>
-      </div>
-      <div className="parallax-layer fg-layer" ref={fgRef}>
-        <div className="circle-shape shape-2"></div>
-      </div>
+      {/* Parallax Background */}
+      <SectionParallax />
     </section>
   );
 };

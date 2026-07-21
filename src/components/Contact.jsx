@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { FaLinkedin, FaGithub, FaCheckCircle, FaExclamationCircle } from 'react-icons/fa';
 import './Contact.css';
+import SectionParallax from './SectionParallax';
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: '', phone: '', message: '' });
@@ -48,6 +49,7 @@ const Contact = () => {
 
   return (
     <section className="contact" id="contact">
+      <SectionParallax />
       <div className="container contact-container">
         <div className="section-header reveal reveal-up">
           <div className="section-bg-text">CONTACT</div>

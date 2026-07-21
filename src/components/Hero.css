@@ -85,6 +85,11 @@
   letter-spacing: 1px;
 }
 
+[data-theme="light"] .role {
+  color: var(--accent); /* Darker purple in light mode */
+  text-shadow: 0 0 10px rgba(124, 58, 237, 0.15); /* Subtler shadow */
+}
+
 .cursor {
   display: inline-block;
   margin-left: 4px;

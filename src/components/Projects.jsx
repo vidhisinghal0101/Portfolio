@@ -4,6 +4,7 @@ import './Projects.css';
 import dawnboxImg from '../assets/dawnbox.png';
 import budgetBuddyImg from '../assets/budgetbuddy.png';
 import housePredImg from '../assets/house-prediction.jpg';
+import SectionParallax from './SectionParallax';
 
 const projectsData = [
   {
@@ -75,6 +76,7 @@ const Projects = () => {
 
   return (
     <section className="projects" id="projects">
+      <SectionParallax />
       <div className="container">
         <div className="section-header reveal reveal-up">
           <div className="section-bg-text">PROJECTS</div>
