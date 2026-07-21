@@ -64,7 +64,7 @@ const About = () => {
                 <h3 className="subsection-title">Professional Experience</h3>
                 <div className="timeline-item">
                   <h4>AI Engineer & SDE Intern</h4>
-                  <p className="timeline-meta">Studyzone365 (Study2Win Pvt Ltd) | Present</p>
+                  <p className="timeline-meta">Studyzone365 (Study2Win Pvt Ltd) | September 2026 </p>
                   <ul className="timeline-desc">
                     <li>Spearheading research and development for a new AI-driven project, identifying innovative solutions and technical requirements.</li>
                     <li>Designing and structuring comprehensive new courses focusing on study abroad preparation and coding/programming.</li>
@@ -73,7 +73,7 @@ const About = () => {
                 </div>
                 <div className="timeline-item">
                   <h4>React Native Developer Intern</h4>
-                  <p className="timeline-meta">Vybout | Apr 2026</p>
+                  <p className="timeline-meta">Vybout | April 2026</p>
                   <ul className="timeline-desc">
                     <li>Built and shipped mobile & web features using React Native, React.js, Next.js, and PostgreSQL across the full product lifecycle.</li>
                     <li>Developed reusable cross-platform UI components and integrated frontend systems with backend APIs.</li>
@@ -82,7 +82,7 @@ const About = () => {
                 </div>
                 <div className="timeline-item">
                   <h4>Social Media Content Intern</h4>
-                  <p className="timeline-meta">DreamHitch | Oct 2024</p>
+                  <p className="timeline-meta">DreamHitch | October 2024</p>
                   <ul className="timeline-desc">
                     <li>At DreamHitch, I worked as a Social Media Content Intern for a very short period.</li>
                     <li>My primary responsibility was creating a marketing presentation about the company's platform.</li>

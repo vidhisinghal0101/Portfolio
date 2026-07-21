@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 import { SiLeetcode } from 'react-icons/si';
 import './Hero.css';
@@ -40,6 +40,22 @@ const Hero = () => {
     return () => clearTimeout(timeout);
   }, [charIndex, deleting, roleIndex]);
 
+  const bgRef = useRef(null);
+  const midRef = useRef(null);
+  const fgRef = useRef(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      if (bgRef.current) bgRef.current.style.transform = `translateY(${scrollY * 0.1}px)`;
+      if (midRef.current) midRef.current.style.transform = `translateY(${scrollY * 0.15}px)`;
+      if (fgRef.current) fgRef.current.style.transform = `translateY(${scrollY * 0.2}px)`;
+    };
+    
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const handleMagneticMove = (e) => {
     const item = e.currentTarget;
     const rect = item.getBoundingClientRect();
@@ -63,7 +79,7 @@ const Hero = () => {
             <span className="cursor">|</span>
           </h3>
           <p className="bio">
-            Computer Science student with knowledge of full-stack development and experience building small projects. Passionate about strengthening core concepts through hands-on practice and problem-solving. Growing a little everyday.
+            Computer Science student with a strong foundation in full-stack development, Artificial Intelligence, and problem-solving. Experienced in building AI powered applications and real-world software projects, 250+ LeetCode.
           </p>
           <div className="cta-group">
             <a href="#projects" className="btn-primary" onMouseMove={handleMagneticMove} onMouseLeave={handleMagneticReset}>View My Work</a>
@@ -89,10 +105,11 @@ const Hero = () => {
       </div>
       
       {/* Decorative floating elements */}
-      <div className="parallax-wrapper shape-1-wrapper">
+      <div className="parallax-layer bg-layer" ref={bgRef}></div>
+      <div className="parallax-layer mid-layer" ref={midRef}>
         <div className="circle-shape shape-1"></div>
       </div>
-      <div className="parallax-wrapper shape-2-wrapper">
+      <div className="parallax-layer fg-layer" ref={fgRef}>
         <div className="circle-shape shape-2"></div>
       </div>
     </section>
